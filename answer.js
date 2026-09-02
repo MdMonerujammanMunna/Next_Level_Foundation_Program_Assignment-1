@@ -2,10 +2,10 @@
 function describeValue(value) {
     const DataType = typeof value
     if (!!value) {
-        return (`"${DataType} | truthy"`)
+        return (`${DataType} | truthy`)
     }
     else {
-        return (`"${DataType} | falsy"`)
+        return (`${DataType} | falsy`)
     }
 }
 
@@ -59,7 +59,7 @@ function getCngFare(distance, isNight = false, waitingMinutes = 0) {
         Total = ((distance - 2) * 15) + 50
     }
     if (waitingMinutes) {
-        MintChg = waitingMinutes * 2
+        let MintChg = waitingMinutes * 2
         Total = Total + MintChg
     }
     if (isNight === true) {
@@ -67,4 +67,27 @@ function getCngFare(distance, isNight = false, waitingMinutes = 0) {
         Total = Total + ExtraChg
     }
     return Total
+}
+
+
+// ## Question 5: Run Chase Commentator 
+
+const getChaseVerdict = (target, scored, ballsLeft) => {
+    let runsNeeded = target - scored
+    if (runsNeeded <= 0) {
+        return "Won"
+    }
+    if (ballsLeft <= 0) {
+        return "Lost"
+    }
+    let requiredRate = (runsNeeded / ballsLeft) * 6
+    if (requiredRate <= 6) {
+        return `Need ${runsNeeded} runs in ${ballsLeft} balls | Comfortable`
+    }
+    else if (requiredRate > 6 && requiredRate <= 12) {
+        return `Need ${runsNeeded} runs in ${ballsLeft} balls | Tough`
+    }
+    else {
+        return `Need ${runsNeeded} runs in ${ballsLeft} balls | Almost Impossible`
+    }
 }
