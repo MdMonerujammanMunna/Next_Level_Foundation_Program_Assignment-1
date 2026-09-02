@@ -30,3 +30,21 @@ function getDayType(Days) {
             break;
     }
 }
+
+
+// ## Question 3: Username Gatekeeper 
+function validateUsername(UserName) {
+    if (UserName.length < 4) {
+        return "Too Short"
+    }
+    else if (UserName.includes(" ")) {
+        return "No Space Allowed"
+    }
+    else if (UserName.toLowerCase().includes("admin")) {
+        return "Reserved Word"
+    }
+    else {
+        return "Available"
+    }
+}
+
