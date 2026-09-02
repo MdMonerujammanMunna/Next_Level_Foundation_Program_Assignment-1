@@ -48,3 +48,23 @@ function validateUsername(UserName) {
     }
 }
 
+
+// ## Question 4: Dhaka CNG Fare Meter 
+function getCngFare(distance, isNight = false, waitingMinutes = 0) {
+    let Total = 0
+    if (distance <= 2) {
+        Total = 50
+    }
+    else if (distance > 2) {
+        Total = ((distance - 2) * 15) + 50
+    }
+    if (waitingMinutes) {
+        MintChg = waitingMinutes * 2
+        Total = Total + MintChg
+    }
+    if (isNight === true) {
+        let ExtraChg = (Total * 20) / 100
+        Total = Total + ExtraChg
+    }
+    return Total
+}
