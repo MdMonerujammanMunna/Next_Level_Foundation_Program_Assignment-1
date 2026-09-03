@@ -178,7 +178,7 @@ Steps:
 2. You may use comments to specify the question number (example: //Question No. 1)
 
 ---
-
+<!-- 
 ## Submission Instructions
 
 1. **Repository Setup:** Create a personal GitHub repository and push your completed files.
@@ -186,7 +186,7 @@ Steps:
 3. **Submission:** Paste the **direct repository URL** into the assignment submission box. Do not submit individual files or archives.
 
 ---
-<!-- 
+
 ## Assignment Deadline: (2 Days)
 
 * **60 Marks:** September 2, 2026, 11:59 PM
